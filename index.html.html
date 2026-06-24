@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibi Media Space — Digital Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --navy:    #0F172A;
+  --navy2:   #1E293B;
+  --navy3:   #334155;
+  --slate:   #64748B;
+  --fog:     #F1F5F9;
+  --white:   #FFFFFF;
+  --ink:     #0F172A;
+  --line:    #E2E8F0;
+
+  --blue:    #3B82F6;
+  --blue-dk: #1D4ED8;
+  --blue-lt: #DBEAFE;
+  --violet:  #8B5CF6;
+  --violet-lt:#EDE9FE;
+  --pink:    #EC4899;
+  --pink-lt: #FCE7F3;
+  --orange:  #F97316;
+  --orange-lt:#FFEDD5;
+  --teal:    #14B8A6;
+  --teal-lt: #CCFBF1;
+  --amber:   #F59E0B;
+  --amber-lt:#FEF3C7;
+  --green:   #10B981;
+  --green-lt:#D1FAE5;
+
+  --r: 14px; --r-sm: 8px; --r-lg: 20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--fog);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(15,23,42,0.97);backdrop-filter:blur(14px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:64px;
+}
+.nav-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.01em}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  background:linear-gradient(135deg,var(--blue),var(--violet));
+  color:#fff;text-decoration:none;padding:9px 22px;border-radius:999px;
+  font-size:13px;font-weight:600;transition:opacity .15s;
+}
+.nav-cta:hover{opacity:.88}
+
+/* HERO */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  background:var(--navy);padding:130px 6% 90px;
+  position:relative;overflow:hidden;
+}
+.hero-mesh{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 60%,rgba(59,130,246,.18) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 30%,rgba(139,92,246,.16) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 35% at 50% 90%,rgba(236,72,153,.10) 0%,transparent 65%);
+}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);
+  border-radius:999px;padding:5px 16px;
+  font-size:11.5px;font-weight:600;color:var(--blue);
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:28px;
+}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+h1.hero-name{
+  font-family:'Fraunces',serif;
+  font-size:clamp(52px,9vw,104px);font-weight:900;
+  line-height:.94;letter-spacing:-.03em;color:#fff;margin-bottom:10px;
+}
+.hero-name .c-blue{color:var(--blue)}
+.hero-name .c-violet{color:var(--violet)}
+.hero-sub-name{
+  font-family:'Fraunces',serif;font-size:clamp(28px,4vw,48px);
+  font-weight:700;color:rgba(255,255,255,.35);letter-spacing:-.02em;
+  margin-bottom:28px;
+}
+.hero-tagline{font-size:17px;font-weight:300;color:rgba(255,255,255,.65);max-width:540px;line-height:1.75;margin-bottom:36px}
+.hero-tagline strong{color:#fff;font-weight:600}
+
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
+.btn-gradient{
+  background:linear-gradient(135deg,var(--blue),var(--violet));
+  color:#fff;text-decoration:none;padding:14px 28px;border-radius:999px;
+  font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:opacity .15s;
+}
+.btn-gradient:hover{opacity:.88}
+.btn-outline-w{
+  background:rgba(255,255,255,.07);color:#fff;text-decoration:none;
+  padding:14px 28px;border-radius:999px;font-size:14px;font-weight:500;
+  border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:8px;transition:border-color .15s;
+}
+.btn-outline-w:hover{border-color:var(--blue);color:var(--blue)}
+
+.role-chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  display:flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.12);border-radius:999px;
+  padding:8px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.75);
+}
+.chip i{font-size:16px}
+.chip.c1{border-color:rgba(59,130,246,.4);color:var(--blue)}
+.chip.c2{border-color:rgba(139,92,246,.4);color:var(--violet)}
+.chip.c3{border-color:rgba(236,72,153,.4);color:var(--pink)}
+.chip.c4{border-color:rgba(20,184,166,.4);color:var(--teal)}
+
+.hero-layout{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;width:100%}
+.hero-socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.soc{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;transition:all .15s;
+}
+.soc:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* PHOTO BLOCK */
+.hero-photo-col{display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
+.hero-photo-frame{
+  position:relative;width:340px;height:400px;border-radius:24px;overflow:hidden;
+  border:2px solid rgba(255,255,255,.1);
+  box-shadow:0 0 0 1px rgba(59,130,246,.3), 0 32px 80px rgba(0,0,0,.5);
+}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.hero-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(15,23,42,.85) 0%, rgba(15,23,42,.1) 50%, transparent 100%);
+}
+.hero-photo-name{
+  position:absolute;bottom:0;left:0;right:0;padding:20px 22px;
+}
+.hero-photo-name h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.hero-photo-name p{font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.03em}
+
+/* Floating accent badges on photo */
+.photo-badge{
+  position:absolute;display:flex;align-items:center;gap:8px;
+  background:rgba(15,23,42,.85);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12);border-radius:999px;
+  padding:8px 14px;font-size:12px;font-weight:600;color:#fff;
+  white-space:nowrap;
+}
+.photo-badge i{font-size:16px}
+.pb-top{top:-14px;right:-14px}
+.pb-mid{bottom:100px;left:-24px}
+
+/* Upload hint */
+.upload-hint{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(59,130,246,.1);border:1px dashed rgba(59,130,246,.4);
+  border-radius:999px;padding:8px 18px;
+  font-size:12px;font-weight:500;color:var(--blue);cursor:pointer;
+  transition:background .15s;
+}
+.upload-hint:hover{background:rgba(59,130,246,.18)}
+.upload-hint i{font-size:16px}
+
+@media(max-width:1000px){
+  .hero-layout{grid-template-columns:1fr;gap:48px}
+  .hero-photo-col{align-items:flex-start}
+  .hero-photo-frame{width:100%;max-width:360px;height:360px}
+}
+
+/* SECTIONS */
+.sec{padding:96px 6%}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec.alt{background:var(--navy);color:#fff}
+.sec.alt2{background:var(--navy2);color:#fff}
+.sec.lite{background:var(--white)}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.eyebrow.e-blue{color:var(--blue)}
+.eyebrow.e-violet{color:var(--violet)}
+.eyebrow.e-pink{color:var(--pink)}
+.eyebrow.e-teal{color:var(--teal)}
+.eyebrow.e-orange{color:var(--orange)}
+.eyebrow.e-amber{color:var(--amber)}
+.sec-title{font-family:'Fraunces',serif;font-size:clamp(26px,3.6vw,44px);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.sec-body{font-size:15px;max-width:500px;line-height:1.75;margin-bottom:48px;opacity:.7}
+.sec.alt .sec-title,.sec.alt2 .sec-title{color:#fff}
+.sec.alt .sec-body,.sec.alt2 .sec-body{color:rgba(255,255,255,.6)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start}
+.about-copy p{font-size:15px;line-height:1.8;margin-bottom:16px;color:rgba(255,255,255,.75)}
+.chips-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tag-chip{
+  font-size:12px;font-weight:600;padding:5px 13px;border-radius:999px;
+}
+.tag-chip:nth-child(3n+1){background:rgba(59,130,246,.15);color:var(--blue)}
+.tag-chip:nth-child(3n+2){background:rgba(139,92,246,.15);color:var(--violet)}
+.tag-chip:nth-child(3n){background:rgba(20,184,166,.15);color:var(--teal)}
+
+.stat-cards{display:flex;flex-direction:column;gap:14px}
+.stat-card{
+  border-radius:var(--r);padding:20px 22px;
+  display:flex;align-items:center;gap:18px;
+}
+.stat-card:nth-child(1){background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(59,130,246,.05));border:1px solid rgba(59,130,246,.3)}
+.stat-card:nth-child(2){background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(139,92,246,.05));border:1px solid rgba(139,92,246,.3)}
+.stat-card:nth-child(3){background:linear-gradient(135deg,rgba(20,184,166,.2),rgba(20,184,166,.05));border:1px solid rgba(20,184,166,.3)}
+.stat-card:nth-child(4){background:linear-gradient(135deg,rgba(236,72,153,.2),rgba(236,72,153,.05));border:1px solid rgba(236,72,153,.3)}
+.stat-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;min-width:75px}
+.stat-card:nth-child(1) .stat-num{color:var(--blue)}
+.stat-card:nth-child(2) .stat-num{color:var(--violet)}
+.stat-card:nth-child(3) .stat-num{color:var(--teal)}
+.stat-card:nth-child(4) .stat-num{color:var(--pink)}
+.stat-info h4{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:2px}
+.stat-info p{font-size:12px;color:rgba(255,255,255,.5)}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px}
+.svc-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r);padding:28px 24px;transition:transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
+.svc-card:nth-child(1)::before{background:linear-gradient(90deg,var(--blue),var(--violet))}
+.svc-card:nth-child(2)::before{background:linear-gradient(90deg,var(--violet),var(--pink))}
+.svc-card:nth-child(3)::before{background:linear-gradient(90deg,var(--pink),var(--orange))}
+.svc-card:nth-child(4)::before{background:linear-gradient(90deg,var(--teal),var(--green))}
+.svc-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.svc-icon{width:46px;height:46px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+.svc-card:nth-child(1) .svc-icon{background:var(--blue-lt);color:var(--blue)}
+.svc-card:nth-child(2) .svc-icon{background:var(--violet-lt);color:var(--violet)}
+.svc-card:nth-child(3) .svc-icon{background:var(--pink-lt);color:var(--pink)}
+.svc-card:nth-child(4) .svc-icon{background:var(--teal-lt);color:var(--teal)}
+.svc-card h3{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.svc-list{list-style:none}
+.svc-list li{font-size:13px;color:var(--slate);padding:4px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.svc-list li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.svc-card:nth-child(1) .svc-list li::before{background:var(--blue)}
+.svc-card:nth-child(2) .svc-list li::before{background:var(--violet)}
+.svc-card:nth-child(3) .svc-list li::before{background:var(--pink)}
+.svc-card:nth-child(4) .svc-list li::before{background:var(--teal)}
+
+/* PORTFOLIO TABS */
+.tab-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tab{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.55);padding:8px 18px;border-radius:999px;
+  font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;
+}
+.tab.on{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;border-color:transparent;font-weight:600}
+.tab:hover:not(.on){border-color:var(--blue);color:var(--blue)}
+.pf-grid{display:none;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px}
+.pf-grid.on{display:grid}
+.pf-card{
+  background:var(--navy3);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r);overflow:hidden;transition:transform .2s,box-shadow .2s;
+}
+.pf-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.pf-thumb{
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+  font-size:44px;position:relative;
+}
+.pf-lbl{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(15,23,42,.8);backdrop-filter:blur(4px);
+  padding:8px 14px;font-size:11.5px;font-weight:600;color:#fff;letter-spacing:.02em;
+}
+.pf-body{padding:16px 18px}
+.pf-body h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.pf-body p{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:8px}
+.pf-tag{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.03em}
+.pf-tag.t-blue{background:rgba(59,130,246,.2);color:var(--blue)}
+.pf-tag.t-violet{background:rgba(139,92,246,.2);color:var(--violet)}
+.pf-tag.t-pink{background:rgba(236,72,153,.2);color:var(--pink)}
+.pf-tag.t-teal{background:rgba(20,184,166,.2);color:var(--teal)}
+.pf-tag.t-orange{background:rgba(249,115,22,.2);color:var(--orange)}
+
+/* VIDEO */
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.vid-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.vid-thumb{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;cursor:pointer}
+.vid-play{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;transition:transform .2s}
+.vid-thumb:hover .vid-play{transform:scale(1.1)}
+.vid-cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.vid-body{padding:20px 20px 18px}
+.vid-body h3{font-size:15.5px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.vid-obj{font-size:12.5px;color:var(--slate);margin-bottom:12px;line-height:1.5}
+.vid-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.vid-pill{background:var(--fog);border:1px solid var(--line);font-size:11px;padding:3px 10px;border-radius:999px;color:var(--slate)}
+.vid-result{display:flex;align-items:center;gap:8px;background:var(--green-lt);border:1px solid #A7F3D0;border-radius:var(--r-sm);padding:9px 13px}
+.vid-result i{color:var(--green);font-size:15px}
+.vid-result span{font-size:12.5px;color:#065F46;font-weight:600}
+
+/* CASES */
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.case-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px}
+.case-label{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px}
+.cl-blue{background:var(--blue-lt);color:var(--blue-dk)}
+.cl-violet{background:var(--violet-lt);color:#5B21B6}
+.cl-teal{background:var(--teal-lt);color:#0F766E}
+.case-card h3{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.case-obj{font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:16px}
+.case-acts-lbl{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
+.case-act{font-size:13px;color:var(--navy3);padding:4px 0;display:flex;align-items:flex-start;gap:8px}
+.case-act i{font-size:14px;flex-shrink:0;margin-top:2px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.metric{border-radius:var(--r-sm);padding:13px;text-align:center}
+.m-blue{background:var(--blue-lt)}
+.m-violet{background:var(--violet-lt)}
+.m-pink{background:var(--pink-lt)}
+.m-teal{background:var(--teal-lt)}
+.m-orange{background:var(--orange-lt)}
+.m-green{background:var(--green-lt)}
+.metric-v{font-family:'Fraunces',serif;font-size:23px;font-weight:900}
+.m-blue .metric-v{color:var(--blue-dk)}
+.m-violet .metric-v{color:#5B21B6}
+.m-pink .metric-v{color:#9D174D}
+.m-teal .metric-v{color:#0F766E}
+.m-orange .metric-v{color:#C2410C}
+.m-green .metric-v{color:#065F46}
+.metric-l{font-size:10.5px;color:var(--slate);margin-top:2px}
+
+/* ANALYTICS */
+.an-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.an-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;overflow:hidden}
+.an-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.an-ico{width:38px;height:38px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:19px}
+.an-ttl{font-size:13.5px;font-weight:600;color:var(--ink)}
+.an-per{font-size:11px;color:var(--slate);margin-top:1px}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.kpi-v{font-size:21px;font-weight:700;color:var(--ink)}
+.kpi-l{font-size:11px;color:var(--slate)}
+.kpi-c{font-size:11px;font-weight:600}
+.up{color:var(--green)}.dn{color:#DC2626}
+.bars{display:flex;align-items:flex-end;gap:4px;height:38px;margin-bottom:6px}
+.bar{flex:1;border-radius:3px 3px 0 0}
+.sample-note{font-size:10px;color:var(--slate);font-style:italic}
+
+/* CALENDAR */
+.cal-wrap{overflow-x:auto}
+table.cal{width:100%;border-collapse:collapse;min-width:680px}
+table.cal th{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:13px 16px;text-align:left;border-bottom:2px solid}
+table.cal td{padding:11px 16px;font-size:13px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.cal tr:hover td{background:#F8FAFC}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600}
+.p-ig{background:#FCE7F3;color:#BE185D}
+.p-fb{background:#DBEAFE;color:#1D4ED8}
+.p-tt{background:var(--violet-lt);color:#5B21B6}
+.p-li{background:#DBEAFE;color:#0369A1}
+.p-yt{background:#FEE2E2;color:#B91C1C}
+.ct-b{background:var(--fog);border:1px solid var(--line);border-radius:var(--r-sm);padding:2px 9px;font-size:11px;color:var(--slate)}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+.tool-grp h3{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tool-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink)}
+.tool-item i{font-size:17px;width:22px}
+
+/* TESTIMONIALS */
+.testi{max-width:520px;margin:0 auto;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:48px 40px}
+.testi i{font-size:38px;margin-bottom:16px}
+.testi p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.8}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.ci-intro{font-size:15px;line-height:1.8;color:rgba(255,255,255,.6);margin-bottom:28px}
+.ci-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.ci-ico{width:42px;height:42px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ci-row p{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1px}
+.ci-row span{font-size:13.5px;color:#fff;font-weight:500}
+.soc-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.soc-p{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;padding:7px 14px;font-size:12px;font-weight:500;color:rgba(255,255,255,.7);
+  text-decoration:none;transition:all .15s;
+}
+.soc-p:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.soc-p i{font-size:16px}
+.contact-form{background:var(--white);border-radius:var(--r);padding:32px}
+.contact-form h3{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.contact-form .cf-sub{font-size:13px;color:var(--slate);margin-bottom:22px}
+.f-row{display:flex;gap:12px;margin-bottom:12px}
+.f-in{
+  flex:1;background:var(--fog);border:1.5px solid var(--line);
+  border-radius:var(--r-sm);padding:12px 16px;
+  font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--ink);outline:none;transition:border-color .15s;
+}
+.f-in:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.f-in::placeholder{color:var(--slate)}
+textarea.f-in{height:110px;resize:none}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:48px 6%;text-align:center}
+.f-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
+.f-logo span{color:var(--blue)}
+footer p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.9}
+
+@media(max-width:780px){
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .nav-links{display:none}
+  h1.hero-name{font-size:52px}
+  .hero-layout{grid-template-columns:1fr}
+  .hero-photo-frame{max-width:100%;height:320px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Bibi<span>.</span>Media</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#cases">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-inner">
+    <div class="hero-layout">
+
+      <!-- LEFT: text -->
+      <div class="hero-text-col">
+        <div class="hero-badge"><span class="pulse"></span>Available for new projects</div>
+        <h1 class="hero-name"><span class="c-blue">Bibi</span><br><span class="c-violet">Media</span></h1>
+        <div class="hero-sub-name">Space</div>
+        <p class="hero-tagline">Strategic digital marketing that turns <strong>attention into revenue</strong> — from brand identity to paid campaigns and content that converts.</p>
+        <div class="hero-btns">
+          <a href="#portfolio" class="btn-gradient"><i class="ti ti-eye" aria-hidden="true"></i>View portfolio</a>
+          <a href="#contact" class="btn-outline-w"><i class="ti ti-mail" aria-hidden="true"></i>Get in touch</a>
+        </div>
+        <div class="role-chips">
+          <div class="chip c1"><i class="ti ti-chart-line" aria-hidden="true"></i>Social Media Manager</div>
+          <div class="chip c2"><i class="ti ti-speakerphone" aria-hidden="true"></i>Digital Marketer</div>
+          <div class="chip c3"><i class="ti ti-palette" aria-hidden="true"></i>Graphic Designer</div>
+          <div class="chip c4"><i class="ti ti-video" aria-hidden="true"></i>Content Creator</div>
+        </div>
+        <div class="hero-socials">
+          <a href="#" class="soc" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+          <a href="#" class="soc" aria-label="GitHub"><i class="ti ti-brand-github" aria-hidden="true"></i></a>
+          <a href="#" class="soc" aria-label="Fiverr"><i class="ti ti-shopping-bag" aria-hidden="true"></i></a>
+          <a href="#" class="soc" aria-label="TikTok"><i class="ti ti-brand-tiktok" aria-hidden="true"></i></a>
+          <a href="#" class="soc" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT: photo -->
+      <div class="hero-photo-col">
+        <div class="hero-photo-frame">
+          <!--
+            ╔══════════════════════════════════════════╗
+            ║  REPLACE YOUR PHOTO HERE                 ║
+            ║  Change the src below to your image:     ║
+            ║  src="your-photo.jpg"                    ║
+            ╚══════════════════════════════════════════╝
+          -->
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=680&q=80"
+            alt="Bibi — Digital Marketing Professional"
+            id="profile-photo"
+          >
+          <div class="hero-photo-overlay"></div>
+          <div class="hero-photo-name">
+            <h3>Bibi Media Space</h3>
+            <p>Digital Marketing Professional</p>
+          </div>
+          <!-- Floating accent badges -->
+          <div class="photo-badge pb-top">
+            <i class="ti ti-trending-up" style="color:var(--blue)" aria-hidden="true"></i>
+            <span>2M+ Reach Generated</span>
+          </div>
+          <div class="photo-badge pb-mid">
+            <i class="ti ti-star" style="color:var(--amber)" aria-hidden="true"></i>
+            <span>50+ Happy Clients</span>
+          </div>
+        </div>
+
+        <!-- Upload swap hint -->
+        <label class="upload-hint" for="photo-upload">
+          <i class="ti ti-camera" aria-hidden="true"></i>
+          Replace with your photo
+          <input type="file" id="photo-upload" accept="image/*" style="display:none" onchange="swapPhoto(event)">
+        </label>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT — dark navy -->
+<section id="about" class="sec alt">
+  <div class="sec-inner">
+    <span class="eyebrow e-blue">About Me</span>
+    <h2 class="sec-title">The strategy behind the scroll.</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I'm a digital marketing professional and creative strategist operating under the Bibi Media Space brand. My work sits at the intersection of compelling visuals, data-driven campaigns, and platform-native content — built to move audiences from discovery to conversion.</p>
+        <p>From brand identity systems to paid advertising funnels, I deliver end-to-end solutions. I design in Canva and Figma, produce short-form video with CapCut, run Meta and Google Ads, and leverage AI tools including ChatGPT and ElevenLabs to scale content without sacrificing quality.</p>
+        <p>My approach is always strategic: understand the brand, define the audience, then build content and campaigns that generate measurable results.</p>
+        <div class="chips-tags">
+          <span class="tag-chip">Meta Ads</span><span class="tag-chip">Google Ads</span><span class="tag-chip">TikTok Ads</span>
+          <span class="tag-chip">Canva</span><span class="tag-chip">Figma</span><span class="tag-chip">CapCut</span>
+          <span class="tag-chip">AI Video</span><span class="tag-chip">Brand Identity</span><span class="tag-chip">Copywriting</span>
+          <span class="tag-chip">Analytics</span>
+        </div>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-num">50+</div><div class="stat-info"><h4>Clients served</h4><p>Fashion, real estate & local biz</p></div></div>
+        <div class="stat-card"><div class="stat-num">120+</div><div class="stat-info"><h4>Campaigns launched</h4><p>Meta, Google, TikTok, Snapchat</p></div></div>
+        <div class="stat-card"><div class="stat-num">2M+</div><div class="stat-info"><h4>Total reach generated</h4><p>Organic & paid combined</p></div></div>
+        <div class="stat-card"><div class="stat-num">4</div><div class="stat-info"><h4>Ad platforms mastered</h4><p>Meta · Google · TikTok · Snap</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — white -->
+<section id="services" class="sec lite">
+  <div class="sec-inner">
+    <span class="eyebrow e-violet">What I offer</span>
+    <h2 class="sec-title">Services</h2>
+    <p class="sec-body">Full-spectrum digital marketing — brand creation to paid campaigns and content production.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        <h3>Social Media Management</h3>
+        <ul class="svc-list">
+          <li>Content calendars & scheduling</li><li>Community management</li>
+          <li>Audience growth strategies</li><li>Analytics & performance reporting</li><li>Engagement management</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="ti ti-speakerphone" aria-hidden="true"></i></div>
+        <h3>Paid Advertising</h3>
+        <ul class="svc-list">
+          <li>Google Ads</li><li>Facebook & Instagram Ads</li>
+          <li>TikTok Ads Manager</li><li>Snapchat & X (Twitter) Ads</li><li>Retargeting campaigns</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="ti ti-palette" aria-hidden="true"></i></div>
+        <h3>Graphic Design</h3>
+        <ul class="svc-list">
+          <li>Brand identity & logo design</li><li>Flyers & event posters</li>
+          <li>Social media creatives</li><li>Marketing banners</li><li>Business cards & brochures</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="ti ti-video" aria-hidden="true"></i></div>
+        <h3>Content Creation</h3>
+        <ul class="svc-list">
+          <li>Reels & TikTok videos</li><li>YouTube Shorts</li>
+          <li>Product & promotional videos</li><li>Ad scripts & copywriting</li><li>AI-assisted video production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO — dark navy2 -->
+<section id="portfolio" class="sec alt2">
+  <div class="sec-inner">
+    <span class="eyebrow e-pink">Design showcase</span>
+    <h2 class="sec-title">Portfolio</h2>
+    <p class="sec-body">Branding, flyers, banners, and social creatives. Replace placeholders with real screenshots from your assets/ folder.</p>
+    <div class="tab-bar">
+      <button class="tab on" onclick="switchTab('branding',this)">Branding</button>
+      <button class="tab" onclick="switchTab('flyers',this)">Flyers</button>
+      <button class="tab" onclick="switchTab('banners',this)">Banners</button>
+      <button class="tab" onclick="switchTab('social',this)">Social Media</button>
+      <button class="tab" onclick="switchTab('logos',this)">Logos</button>
+    </div>
+
+    <div id="pf-branding" class="pf-grid on">
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#312E81,#5B21B6);">🎨<div class="pf-lbl">Luxury Brand Identity</div></div><div class="pf-body"><h4>Velour Cosmetics</h4><p>Full brand identity — logo, palette, typography</p><span class="pf-tag t-violet">Branding</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#1E3A5F,#1D4ED8);">🏢<div class="pf-lbl">Corporate Brand Guidelines</div></div><div class="pf-body"><h4>Nexus Properties</h4><p>Real estate brand guidelines & style guide</p><span class="pf-tag t-blue">Branding</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#7C2D12,#C2410C);">🍽️<div class="pf-lbl">Restaurant Brand Identity</div></div><div class="pf-body"><h4>La Maison Kitchen</h4><p>Logo, menu design & digital asset system</p><span class="pf-tag t-orange">Branding</span></div></div>
+    </div>
+    <div id="pf-flyers" class="pf-grid">
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#1E1B4B,#4C1D95);">🎵<div class="pf-lbl">Music Event Flyer</div></div><div class="pf-body"><h4>Night Frequency Event</h4><p>Event flyer — nightclub / music</p><span class="pf-tag t-violet">Event Flyer</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#064E3B,#059669);">✝️<div class="pf-lbl">Church Service Flyer</div></div><div class="pf-body"><h4>Grace Chapel</h4><p>Church Sunday service announcement</p><span class="pf-tag t-teal">Church Flyer</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#92400E,#D97706);">🏠<div class="pf-lbl">Real Estate Listing</div></div><div class="pf-body"><h4>Nexus Properties</h4><p>Property listing & open day flyer</p><span class="pf-tag t-orange">Real Estate</span></div></div>
+    </div>
+    <div id="pf-banners" class="pf-grid">
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#831843,#DB2777); aspect-ratio:3/1;">📘<div class="pf-lbl">Facebook Cover — Fashion</div></div><div class="pf-body"><h4>Style Collective FB Cover</h4><p>Facebook page cover banner</p><span class="pf-tag t-pink">Facebook Cover</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#1E3A5F,#2563EB); aspect-ratio:3/1;">💼<div class="pf-lbl">LinkedIn Banner — Corporate</div></div><div class="pf-body"><h4>Executive LinkedIn Cover</h4><p>LinkedIn profile & company banner</p><span class="pf-tag t-blue">LinkedIn Banner</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#7F1D1D,#DC2626); aspect-ratio:3/1;">▶️<div class="pf-lbl">YouTube Channel Banner</div></div><div class="pf-body"><h4>Creator Channel Banner</h4><p>YouTube channel art & branding</p><span class="pf-tag t-pink">YouTube Banner</span></div></div>
+    </div>
+    <div id="pf-social" class="pf-grid">
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#831843,#9D174D); aspect-ratio:1/1;">💄<div class="pf-lbl">Instagram Post — Beauty</div></div><div class="pf-body"><h4>Product Launch Post</h4><p>Instagram feed post — beauty brand</p><span class="pf-tag t-pink">Instagram Post</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#064E3B,#065F46); aspect-ratio:1/1;">🛒<div class="pf-lbl">Promotional Carousel</div></div><div class="pf-body"><h4>Sale Campaign Creative</h4><p>Carousel & promotional graphic design</p><span class="pf-tag t-teal">Carousel</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:linear-gradient(135deg,#1E3A5F,#1D4ED8); aspect-ratio:1/1;">🏡<div class="pf-lbl">Real Estate Story</div></div><div class="pf-body"><h4>Property Story Template</h4><p>Instagram / Facebook story design</p><span class="pf-tag t-blue">Story Design</span></div></div>
+    </div>
+    <div id="pf-logos" class="pf-grid">
+      <div class="pf-card"><div class="pf-thumb" style="background:var(--navy3); aspect-ratio:1/1;"><span style="font-family:Fraunces,serif;font-size:56px;font-weight:900;color:var(--violet);">VC</span><div class="pf-lbl">Velour Cosmetics</div></div><div class="pf-body"><h4>Velour Cosmetics Logo</h4><p>Monogram-style luxury beauty logo</p><span class="pf-tag t-violet">Logo</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:var(--navy3); aspect-ratio:1/1;"><span style="font-family:Fraunces,serif;font-size:56px;font-weight:900;color:var(--teal);">NP</span><div class="pf-lbl">Nexus Properties</div></div><div class="pf-body"><h4>Nexus Properties Logo</h4><p>Real estate brand mark</p><span class="pf-tag t-teal">Logo</span></div></div>
+      <div class="pf-card"><div class="pf-thumb" style="background:var(--navy3); aspect-ratio:1/1;"><span style="font-family:Fraunces,serif;font-size:56px;font-weight:900;color:var(--orange);">LM</span><div class="pf-lbl">La Maison Kitchen</div></div><div class="pf-body"><h4>La Maison Kitchen Logo</h4><p>Elegant restaurant wordmark</p><span class="pf-tag t-orange">Logo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO — white/light -->
+<section id="videos" class="sec lite">
+  <div class="sec-inner">
+    <span class="eyebrow e-teal">Video work</span>
+    <h2 class="sec-title">Video Portfolio</h2>
+    <p class="sec-body" style="color:var(--slate)">Commercial ads, AI video, and social reels — scripted, produced, and edited end-to-end.</p>
+    <div class="vid-grid">
+      <div class="vid-card">
+        <div class="vid-thumb" style="background:linear-gradient(135deg,#1E3A5F,#1D4ED8);">
+          <span class="vid-cat" style="color:var(--blue)">Commercial Ad</span>
+          <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        </div>
+        <div class="vid-body"><h3>Luxury Real Estate Campaign</h3><p class="vid-obj">Generate awareness and qualified property leads for a luxury development.</p>
+        <div class="vid-pills"><span class="vid-pill">Script Writing</span><span class="vid-pill">Voice-Over</span><span class="vid-pill">Video Editing</span><span class="vid-pill">Motion Graphics</span></div>
+        <div class="vid-result"><i class="ti ti-trending-up" aria-hidden="true"></i><span>50,000+ users reached · 60+ qualified leads</span></div></div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb" style="background:linear-gradient(135deg,#312E81,#6D28D9);">
+          <span class="vid-cat" style="color:var(--violet)">AI Video</span>
+          <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        </div>
+        <div class="vid-body"><h3>Fashion Brand AI Promo</h3><p class="vid-obj">Drive online store traffic via AI-generated promotional video ad.</p>
+        <div class="vid-pills"><span class="vid-pill">AI Visuals</span><span class="vid-pill">ElevenLabs VO</span><span class="vid-pill">Ad Script</span><span class="vid-pill">CapCut Edit</span></div>
+        <div class="vid-result"><i class="ti ti-trending-up" aria-hidden="true"></i><span>Reach: 120,000+ · Engagement: +65%</span></div></div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb" style="background:linear-gradient(135deg,#064E3B,#0F766E);">
+          <span class="vid-cat" style="color:var(--teal)">Social Reel</span>
+          <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        </div>
+        <div class="vid-body"><h3>Product Showcase Reel</h3><p class="vid-obj">Increase product awareness via Instagram and TikTok short-form video.</p>
+        <div class="vid-pills"><span class="vid-pill">Instagram Reel</span><span class="vid-pill">TikTok Cut</span><span class="vid-pill">Hook Script</span><span class="vid-pill">Captions</span></div>
+        <div class="vid-result"><i class="ti ti-trending-up" aria-hidden="true"></i><span>85,000+ plays across platforms</span></div></div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb" style="background:linear-gradient(135deg,#92400E,#D97706);">
+          <span class="vid-cat" style="color:var(--amber)">Corporate Ad</span>
+          <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        </div>
+        <div class="vid-body"><h3>Corporate Brand Film</h3><p class="vid-obj">Establish brand authority and trust for a B2B corporate client.</p>
+        <div class="vid-pills"><span class="vid-pill">Storyboard</span><span class="vid-pill">Script</span><span class="vid-pill">VO Direction</span><span class="vid-pill">Final Edit</span></div>
+        <div class="vid-result"><i class="ti ti-trending-up" aria-hidden="true"></i><span>40,000+ views · 3× engagement benchmark</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES — fog/light -->
+<section id="cases" class="sec">
+  <div class="sec-inner">
+    <span class="eyebrow e-orange">Campaign results</span>
+    <h2 class="sec-title">Case Studies</h2>
+    <p class="sec-body" style="color:var(--slate)">Performance across fashion, real estate, and local business verticals.</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-label cl-blue"><i class="ti ti-shirt" aria-hidden="true"></i>Fashion Brand</div>
+        <h3>Online Sales Campaign</h3>
+        <p class="case-obj">Increase online sales through targeted Meta Ads and an organic content strategy.</p>
+        <div class="case-acts-lbl" style="color:var(--blue)">Actions</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--blue)" aria-hidden="true"></i>Created full content strategy & editorial calendar</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--blue)" aria-hidden="true"></i>Designed high-converting ad creatives</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--blue)" aria-hidden="true"></i>Managed Meta Ads with A/B split testing</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--blue)" aria-hidden="true"></i>Built custom audience targeting segments</div>
+        <div class="metrics">
+          <div class="metric m-blue"><div class="metric-v">120K+</div><div class="metric-l">Total Reach</div></div>
+          <div class="metric m-violet"><div class="metric-v">+65%</div><div class="metric-l">Engagement</div></div>
+          <div class="metric m-teal"><div class="metric-v">300+</div><div class="metric-l">Leads</div></div>
+          <div class="metric m-green"><div class="metric-v">−35%</div><div class="metric-l">Cost Per Lead</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-label cl-violet"><i class="ti ti-building" aria-hidden="true"></i>Real Estate</div>
+        <h3>Property Inquiry Campaign</h3>
+        <p class="case-obj">Generate qualified property inquiries for a developer via paid social and video advertising.</p>
+        <div class="case-acts-lbl" style="color:var(--violet)">Actions</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--violet)" aria-hidden="true"></i>Designed promotional creatives & listing visuals</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--violet)" aria-hidden="true"></i>Produced video ads showcasing properties</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--violet)" aria-hidden="true"></i>Ran Facebook lead generation campaigns</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--violet)" aria-hidden="true"></i>Implemented retargeting for warm audiences</div>
+        <div class="metrics">
+          <div class="metric m-blue"><div class="metric-v">85K+</div><div class="metric-l">Reach</div></div>
+          <div class="metric m-violet"><div class="metric-v">250+</div><div class="metric-l">Inquiries</div></div>
+          <div class="metric m-teal"><div class="metric-v">60+</div><div class="metric-l">Qualified Leads</div></div>
+          <div class="metric m-orange"><div class="metric-v">4.2×</div><div class="metric-l">ROAS</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-label cl-teal"><i class="ti ti-map-pin" aria-hidden="true"></i>Local Business</div>
+        <h3>Visibility Growth Campaign</h3>
+        <p class="case-obj">Grow social presence and customer inquiries through organic management and paid promotion.</p>
+        <div class="case-acts-lbl" style="color:var(--teal)">Actions</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--teal)" aria-hidden="true"></i>Content management across 3 platforms</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--teal)" aria-hidden="true"></i>Active community engagement & DM management</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--teal)" aria-hidden="true"></i>Paid promotion on Facebook & Instagram</div>
+        <div class="case-act" style="color:var(--navy3)"><i class="ti ti-check" style="color:var(--teal)" aria-hidden="true"></i>Monthly analytics & strategy reviews</div>
+        <div class="metrics">
+          <div class="metric m-teal"><div class="metric-v">+70%</div><div class="metric-l">Follower Growth</div></div>
+          <div class="metric m-blue"><div class="metric-v">2×</div><div class="metric-l">Engagement</div></div>
+          <div class="metric m-violet"><div class="metric-v">+180%</div><div class="metric-l">Inquiries</div></div>
+          <div class="metric m-green"><div class="metric-v">3 mo</div><div class="metric-l">Timeframe</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS — white -->
+<section id="analytics" class="sec lite">
+  <div class="sec-inner">
+    <span class="eyebrow e-blue">Performance reports</span>
+    <h2 class="sec-title">Analytics Dashboard</h2>
+    <p class="sec-body" style="color:var(--slate)">Sample campaign snapshots. Replace with actual screenshots from your ad platforms.</p>
+    <div class="an-grid">
+      <div class="an-card">
+        <div class="an-head">
+          <div class="an-ico" style="background:#DBEAFE;color:#1D4ED8"><i class="ti ti-brand-facebook" aria-hidden="true"></i></div>
+          <div><div class="an-ttl">Facebook Insights</div><div class="an-per">Fashion Brand · June 2025</div></div>
+        </div>
+        <div class="kpi-grid">
+          <div><div class="kpi-v">42.8K</div><div class="kpi-l">Reach</div><div class="kpi-c up">↑ 38%</div></div>
+          <div><div class="kpi-v">6.2K</div><div class="kpi-l">Engagements</div><div class="kpi-c up">↑ 65%</div></div>
+          <div><div class="kpi-v">4.8%</div><div class="kpi-l">CTR</div><div class="kpi-c up">↑ 1.2pp</div></div>
+          <div><div class="kpi-v">$1.24</div><div class="kpi-l">Cost per lead</div><div class="kpi-c up">↓ 35%</div></div>
+        </div>
+        <div class="bars">
+          <div class="bar" style="height:40%;background:#DBEAFE"></div><div class="bar" style="height:55%;background:#BFDBFE"></div>
+          <div class="bar" style="height:48%;background:#DBEAFE"></div><div class="bar" style="height:70%;background:#BFDBFE"></div>
+          <div class="bar" style="height:65%;background:#DBEAFE"></div><div class="bar" style="height:80%;background:#BFDBFE"></div>
+          <div class="bar" style="height:100%;background:#2563EB"></div>
+        </div>
+        <div class="sample-note">Sample Campaign Performance Report — illustrative data</div>
+      </div>
+      <div class="an-card">
+        <div class="an-head">
+          <div class="an-ico" style="background:#FCE7F3;color:#BE185D"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div>
+          <div><div class="an-ttl">Instagram Analytics</div><div class="an-per">Real Estate · Q2 2025</div></div>
+        </div>
+        <div class="kpi-grid">
+          <div><div class="kpi-v">28.4K</div><div class="kpi-l">Impressions</div><div class="kpi-c up">↑ 52%</div></div>
+          <div><div class="kpi-v">3.1K</div><div class="kpi-l">Profile visits</div><div class="kpi-c up">↑ 44%</div></div>
+          <div><div class="kpi-v">247</div><div class="kpi-l">DM inquiries</div><div class="kpi-c up">↑ 3×</div></div>
+          <div><div class="kpi-v">9.2%</div><div class="kpi-l">Eng. rate</div><div class="kpi-c up">↑ 2.8pp</div></div>
+        </div>
+        <div class="bars">
+          <div class="bar" style="height:35%;background:#FCE7F3"></div><div class="bar" style="height:42%;background:#FBCFE8"></div>
+          <div class="bar" style="height:60%;background:#FCE7F3"></div><div class="bar" style="height:58%;background:#FBCFE8"></div>
+          <div class="bar" style="height:75%;background:#FCE7F3"></div><div class="bar" style="height:88%;background:#FBCFE8"></div>
+          <div class="bar" style="height:100%;background:#EC4899"></div>
+        </div>
+        <div class="sample-note">Sample Campaign Performance Report — illustrative data</div>
+      </div>
+      <div class="an-card">
+        <div class="an-head">
+          <div class="an-ico" style="background:var(--teal-lt);color:#0F766E"><i class="ti ti-brand-google" aria-hidden="true"></i></div>
+          <div><div class="an-ttl">Google Ads Report</div><div class="an-per">E-commerce · May 2025</div></div>
+        </div>
+        <div class="kpi-grid">
+          <div><div class="kpi-v">18.6K</div><div class="kpi-l">Clicks</div><div class="kpi-c up">↑ 29%</div></div>
+          <div><div class="kpi-v">5.6%</div><div class="kpi-l">CTR</div><div class="kpi-c up">↑ 1.4pp</div></div>
+          <div><div class="kpi-v">142</div><div class="kpi-l">Conversions</div><div class="kpi-c up">↑ 88%</div></div>
+          <div><div class="kpi-v">$0.89</div><div class="kpi-l">CPC</div><div class="kpi-c up">↓ 22%</div></div>
+        </div>
+        <div class="bars">
+          <div class="bar" style="height:30%;background:var(--teal-lt)"></div><div class="bar" style="height:45%;background:#99F6E4"></div>
+          <div class="bar" style="height:55%;background:var(--teal-lt)"></div><div class="bar" style="height:62%;background:#99F6E4"></div>
+          <div class="bar" style="height:78%;background:var(--teal-lt)"></div><div class="bar" style="height:90%;background:#99F6E4"></div>
+          <div class="bar" style="height:100%;background:#14B8A6"></div>
+        </div>
+        <div class="sample-note">Sample Campaign Performance Report — illustrative data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR — fog -->
+<section id="calendar" class="sec">
+  <div class="sec-inner">
+    <span class="eyebrow e-violet">Planning</span>
+    <h2 class="sec-title">Content Calendar Sample</h2>
+    <p class="sec-body" style="color:var(--slate)">A sample weekly schedule demonstrating platform-native planning across channels.</p>
+    <div class="cal-wrap">
+      <table class="cal" style="background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)">
+        <thead><tr style="background:var(--navy)">
+          <th style="color:var(--blue);border-color:var(--navy2)">Date</th>
+          <th style="color:var(--violet);border-color:var(--navy2)">Platform</th>
+          <th style="color:var(--pink);border-color:var(--navy2)">Type</th>
+          <th style="color:var(--teal);border-color:var(--navy2)">Theme / Topic</th>
+          <th style="color:var(--amber);border-color:var(--navy2)">Goal</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Mon 2 Jun</td><td><span class="pill p-ig">Instagram</span></td><td><span class="ct-b">Reel</span></td><td>Behind the scenes — product shoot</td><td>Engagement</td></tr>
+          <tr><td>Tue 3 Jun</td><td><span class="pill p-fb">Facebook</span></td><td><span class="ct-b">Carousel</span></td><td>5 reasons to choose [Brand]</td><td>Reach</td></tr>
+          <tr><td>Wed 4 Jun</td><td><span class="pill p-tt">TikTok</span></td><td><span class="ct-b">Video</span></td><td>Trending audio — product demo</td><td>Awareness</td></tr>
+          <tr><td>Thu 5 Jun</td><td><span class="pill p-li">LinkedIn</span></td><td><span class="ct-b">Text Post</span></td><td>Industry insight / thought leadership</td><td>Authority</td></tr>
+          <tr><td>Fri 6 Jun</td><td><span class="pill p-ig">Instagram</span></td><td><span class="ct-b">Story Poll</span></td><td>Interactive — audience Q&A</td><td>Engagement</td></tr>
+          <tr><td>Sat 7 Jun</td><td><span class="pill p-fb">Facebook</span></td><td><span class="ct-b">Photo Post</span></td><td>Weekend offer / promotion</td><td>Conversions</td></tr>
+          <tr><td>Sun 8 Jun</td><td><span class="pill p-yt">YouTube</span></td><td><span class="ct-b">Shorts</span></td><td>Top tip of the week</td><td>Subscribers</td></tr>
+          <tr><td>Mon 9 Jun</td><td><span class="pill p-ig">Instagram</span></td><td><span class="ct-b">Reel</span></td><td>Client testimonial (video)</td><td>Trust / Leads</td></tr>
+          <tr><td>Tue 10 Jun</td><td><span class="pill p-tt">TikTok</span></td><td><span class="ct-b">Duet/Stitch</span></td><td>Trending niche content response</td><td>Reach</td></tr>
+          <tr><td>Wed 11 Jun</td><td><span class="pill p-fb">Facebook</span></td><td><span class="ct-b">Ad (Paid)</span></td><td>Retargeting — cart abandoners</td><td>Conversions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS — dark navy -->
+<section id="tools" class="sec alt">
+  <div class="sec-inner">
+    <span class="eyebrow e-teal">Tech stack</span>
+    <h2 class="sec-title">Tools & Technologies</h2>
+    <p class="sec-body">The platforms I use daily to plan, create, launch, and measure.</p>
+    <div class="tools-grid">
+      <div class="tool-grp">
+        <h3 style="color:var(--blue)"><i class="ti ti-speakerphone" aria-hidden="true"></i>Advertising</h3>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-google" style="color:var(--blue)" aria-hidden="true"></i>Google Ads</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-facebook" style="color:var(--blue)" aria-hidden="true"></i>Meta Ads Manager</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-tiktok" style="color:var(--violet)" aria-hidden="true"></i>TikTok Ads Manager</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-ghost" style="color:var(--pink)" aria-hidden="true"></i>Snapchat Ads</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-linkedin" style="color:var(--blue)" aria-hidden="true"></i>LinkedIn Campaign Mgr</div>
+      </div>
+      <div class="tool-grp">
+        <h3 style="color:var(--violet)"><i class="ti ti-palette" aria-hidden="true"></i>Design</h3>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-figma" style="color:var(--violet)" aria-hidden="true"></i>Figma</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-circle-letter-c" style="color:var(--violet)" aria-hidden="true"></i>Canva</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-photo" style="color:var(--pink)" aria-hidden="true"></i>Adobe Express</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-wand" style="color:var(--pink)" aria-hidden="true"></i>ImageFX / AI Image</div>
+      </div>
+      <div class="tool-grp">
+        <h3 style="color:var(--teal)"><i class="ti ti-video" aria-hidden="true"></i>Content & Video</h3>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-player-play" style="color:var(--teal)" aria-hidden="true"></i>CapCut</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-robot" style="color:var(--teal)" aria-hidden="true"></i>ChatGPT</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-microphone" style="color:var(--green)" aria-hidden="true"></i>ElevenLabs</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-sparkles" style="color:var(--amber)" aria-hidden="true"></i>AI Video Tools</div>
+      </div>
+      <div class="tool-grp">
+        <h3 style="color:var(--amber)"><i class="ti ti-chart-bar" aria-hidden="true"></i>Analytics</h3>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-brand-google" style="color:var(--amber)" aria-hidden="true"></i>Google Analytics 4</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-chart-line" style="color:var(--blue)" aria-hidden="true"></i>Meta Business Suite</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-report" style="color:var(--violet)" aria-hidden="true"></i>TikTok Analytics</div>
+        <div class="tool-item" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.08)"><i class="ti ti-table" style="color:var(--teal)" aria-hidden="true"></i>Custom Report Sheets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — navy2 -->
+<section id="testimonials" class="sec alt2" style="text-align:center">
+  <div class="sec-inner">
+    <span class="eyebrow e-pink">Client feedback</span>
+    <h2 class="sec-title" style="margin-bottom:40px">Testimonials</h2>
+    <div class="testi">
+      <i class="ti ti-award" style="color:var(--amber)" aria-hidden="true"></i>
+      <p>References available upon request.<br><br>I am currently building my client portfolio and would be happy to connect you with past collaborators to speak to the quality and results of my work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — dark navy -->
+<section id="contact" class="sec alt">
+  <div class="sec-inner">
+    <span class="eyebrow e-teal">Get in touch</span>
+    <h2 class="sec-title">Let's grow your brand.</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="ci-intro">Whether you need social media management, a paid campaign, fresh content, or a new brand identity — I'm ready. I typically respond within 24 hours.</p>
+        <div class="ci-row"><div class="ci-ico" style="background:rgba(59,130,246,.15);color:var(--blue)"><i class="ti ti-mail" aria-hidden="true"></i></div><div><p style="color:rgba(255,255,255,.4)">Email</p><span>hello@bibimediaspace.com</span></div></div>
+        <div class="ci-row"><div class="ci-ico" style="background:rgba(20,184,166,.15);color:var(--teal)"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div><div><p style="color:rgba(255,255,255,.4)">WhatsApp</p><span>+1 (000) 000-0000</span></div></div>
+        <div class="ci-row"><div class="ci-ico" style="background:rgba(139,92,246,.15);color:var(--violet)"><i class="ti ti-shopping-bag" aria-hidden="true"></i></div><div><p style="color:rgba(255,255,255,.4)">Fiverr</p><span>fiverr.com/bibimediaspace</span></div></div>
+        <div class="ci-row"><div class="ci-ico" style="background:rgba(236,72,153,.15);color:var(--pink)"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div><div><p style="color:rgba(255,255,255,.4)">Instagram</p><span>@bibimediaspace</span></div></div>
+        <div class="soc-row">
+          <a href="#" class="soc-p"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+          <a href="#" class="soc-p"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
+          <a href="#" class="soc-p"><i class="ti ti-brand-tiktok" aria-hidden="true"></i>TikTok</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a message</h3>
+        <p class="cf-sub">Include your brand, goals, and timeline for project enquiries.</p>
+        <div class="f-row">
+          <input type="text" class="f-in" placeholder="Your name">
+          <input type="email" class="f-in" placeholder="Email address">
+        </div>
+        <input type="text" class="f-in" placeholder="Service you need" style="width:100%;margin-bottom:12px">
+        <textarea class="f-in" placeholder="Tell me about your project..." style="width:100%"></textarea>
+        <a href="mailto:hello@bibimediaspace.com" class="btn-gradient" style="margin-top:16px;width:100%;justify-content:center;text-decoration:none">
+          <i class="ti ti-send" aria-hidden="true"></i>Send enquiry
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Bibi<span>.</span>Media</div>
+  <p>Social Media Management · Paid Advertising · Graphic Design · Content Creation</p>
+  <p style="margin-top:6px;font-size:12px">"The record matters." · © 2025 Bibi Media Space</p>
+</footer>
+
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.pf-grid').forEach(g=>{g.classList.remove('on');g.style.display='none'});
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  const g=document.getElementById('pf-'+id);
+  if(g){g.classList.add('on');g.style.display='grid'}
+  btn.classList.add('on');
+}
+document.querySelectorAll('.pf-grid:not(.on)').forEach(g=>g.style.display='none');
+
+function swapPhoto(e){
+  const file=e.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    document.getElementById('profile-photo').src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
